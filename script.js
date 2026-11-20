@@ -18,11 +18,11 @@ const CONFIG = {
   familySings: true,
 
   packages: [
-    { id: "personal",   name: "Keepsake",            price: 350,  yoco: "",
+    { id: "personal",   name: "Keepsake",            price: 350,  yoco: "thankyou.html",
       desc: "A personal licence. Play it, gift it, share it with family and friends. Not for earning money." },
-    { id: "commercial", name: "Keepsake + Business", price: 850,  yoco: "",
+    { id: "commercial", name: "Keepsake + Business", price: 850,  yoco: "thankyou.html",
       desc: "Also use it in your business, ads, videos, podcasts and monetised social media." },
-    { id: "exclusive",  name: "Exclusive",           price: 2500, yoco: "",
+    { id: "exclusive",  name: "Exclusive",           price: 2500, yoco: "thankyou.html",
       desc: "Everything above, and we never sell, license or reuse your song for anyone else." }
   ]
 };
@@ -276,32 +276,6 @@ $("payBtn").addEventListener("click", e => {
   setTimeout(() => $("afterPay").scrollIntoView({ behavior: "smooth", block: "center" }), 300);
 });
 
-function orderText() {
-  const d = collect();
-  const pkg = chosen();
-  const lines = ["NEW SONG ORDER", "Order number: " + draft.ref, ""];
-  const labels = {
-    recipient_name: "Song for", name_pronunciation: "Name said", relationship: "Relationship", occasion: "Occasion",
-    need_by_date: "Need by", age: "Age", personality: "Personality", loves: "Loves",
-    favourite_memory: "Memory", nicknames_jokes: "Nicknames / jokes", names_places: "Names / places",
-    message: "Message", must_include: "Must include", avoid: "Avoid", own_lyrics: "Own lyrics",
-    style: "Style", mood: "Mood", language: "Language", other_language: "Other language", voice: "Voice",
-    tempo: "Pace", similar_songs: "Similar songs",
-    customer_name: "Customer", customer_phone: "WhatsApp", customer_email: "Email",
-    contact_preference: "Contact by", heard_about_us: "Heard about us"
-  };
-  Object.keys(labels).forEach(k => { if (d[k] && String(d[k]).trim()) lines.push(labels[k] + ": " + String(d[k]).trim()); });
-  lines.push("", "Licence: " + (pkg ? pkg.name + " (" + money(pkg.price) + ")" : "Not selected"), "Terms accepted: " + (d.terms_accepted ? "Yes" : "No"));
-  return lines.join("\n");
-}
-
-$("copyBtn").addEventListener("click", async () => {
-  const b = $("copyBtn");
-  try { await navigator.clipboard.writeText(orderText()); b.textContent = "Copied"; }
-  catch (e) { b.textContent = "Copy failed"; }
-  setTimeout(() => { b.textContent = "Copy order details"; }, 2000);
-});
-
 /* =========================================
    SUBMIT (only reachable after paying)
 ========================================= */
@@ -311,7 +285,7 @@ $("sendBtn").addEventListener("click", async () => {
   const errs = validateAll();
   if (errs.length) { show(errs[0].step, false); showErr(errs); return; }
   if (!CONFIG.formEndpoint) {
-    showErr([], "Our order inbox is not connected yet. Please copy your order details and send them to us on WhatsApp with your order number.");
+    showErr([], "Our order inbox is not connected yet. Please send us a WhatsApp message with your order number.");
     return;
   }
   if (form.elements["_gotcha"].value) { finish(); return; }
@@ -340,7 +314,7 @@ $("sendBtn").addEventListener("click", async () => {
     sending = false;
     btn.disabled = false;
     btn.textContent = "I have paid. Send my order";
-    showErr([], "We could not send your order. Please check your connection and try again. Your answers are saved. If it keeps failing, tap Copy order details and WhatsApp it to us.");
+    showErr([], "We could not send your order. Please check your connection and try again. Your answers are saved. If it keeps failing, please WhatsApp us.");
   }
 });
 

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="af-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Dankie | Botha Familie Liedjies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fbf7f6;
+  --surface: #ffffff;
+  --fg: #29151f;
+  --muted: #806c77;
+  --line: #eadde2;
+  --accent: #a82654;
+  --accent-fg: #ffffff;
+  --accent-soft: #f7e6ec;
+  --warn-bg: #fff3d8;
+  --warn-fg: #72500c;
+  --ok: #1f7a4d;
+  --ok-soft: #e1f3e9;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --shadow-sm: 0 3px 12px rgba(45, 12, 28, .04);
+  --shadow-md: 0 10px 30px rgba(45, 12, 28, .08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #160e13;
+    --surface: #221720;
+    --fg: #f7edf1;
+    --muted: #bba5b0;
+    --line: #392a35;
+    --accent: #e66d98;
+    --accent-fg: #270916;
+    --accent-soft: #38202c;
+    --warn-bg: #392c13;
+    --warn-fg: #f5dda0;
+    --ok: #6fd6a1;
+    --ok-soft: #173126;
+    --shadow-sm: 0 3px 12px rgba(0,0,0,.12);
+    --shadow-md: 0 10px 30px rgba(0,0,0,.25);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: radial-gradient(circle at 85% -10%, var(--accent-soft), transparent 45%);
+  background-repeat: no-repeat;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 { font-family: var(--font-display); margin: 0; text-wrap: balance; letter-spacing: -.03em; line-height: 1.15; }
+h1 { font-size: clamp(1.9rem, 6.5vw, 2.8rem); font-weight: 700; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+p { margin: 0; }
+h1:focus { outline: none; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+.wrap { width: 100%; max-width: 640px; margin: 0 auto; padding-inline: max(18px, env(safe-area-inset-left)) max(18px, env(safe-area-inset-right)); }
+header { border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+header .wrap { padding-block: 16px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; letter-spacing: -.04em; text-decoration: none; color: inherit; }
+.brand span { color: var(--accent); }
+
+main { padding-block: 36px 40px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: clamp(24px, 5vw, 40px);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  animation: rise .5s ease both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.eyebrow { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.lead { color: var(--muted); max-width: 46ch; }
+.small { color: var(--muted); font-size: .88rem; }
+
+/* icons */
+.icon { width: 84px; height: 84px; border-radius: 50%; display: grid; place-items: center; }
+.icon.ok { background: var(--ok-soft); color: var(--ok); }
+.icon.warn { background: var(--warn-bg); color: var(--warn-fg); }
+.icon svg { width: 44px; height: 44px; }
+.tick { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .6s .25s ease forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.spinner { width: 46px; height: 46px; border-radius: 50%; border: 4px solid var(--line); border-top-color: var(--accent); animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* order number */
+.refbox { background: var(--accent-soft); border: 1px dashed var(--accent); border-radius: 18px; padding: 14px 26px; display: flex; flex-direction: column; gap: 2px; }
+.refbox .k { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.refbox .v { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--accent); letter-spacing: .02em; }
+
+.facts { width: 100%; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; text-align: left; }
+.facts div { display: flex; justify-content: space-between; gap: 14px; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: .93rem; }
+.facts div:last-child { border-bottom: 0; }
+.facts dt, .facts .k { color: var(--muted); }
+.facts .v { font-weight: 600; text-align: right; overflow-wrap: anywhere; }
+
+/* next steps */
+.next { width: 100%; text-align: left; display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+.next ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; counter-reset: n; }
+.next li { counter-increment: n; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; font-size: .95rem; }
+.next li::before { content: counter(n); width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--accent-fg); display: grid; place-items: center; font-weight: 700; font-size: .9rem; }
+.next li b { display: block; }
+.next li span { color: var(--muted); }
+
+.err { width: 100%; text-align: left; color: var(--warn-fg); background: var(--warn-bg); padding: 14px 16px; border-radius: 12px; font-size: .9rem; }
+
+/* buttons */
+.btn {
+  display: inline-flex; justify-content: center; align-items: center; text-align: center;
+  text-decoration: none; font: inherit; font-weight: 600;
+  padding: 14px 26px; border-radius: 999px; border: 1px solid var(--accent);
+  cursor: pointer; min-height: 50px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: scale(.98); }
+.btn.primary { background: var(--accent); color: var(--accent-fg); box-shadow: 0 5px 18px rgba(168,38,84,.2); }
+.btn.secondary { background: transparent; color: var(--accent); }
+.btn.secondary:hover { background: var(--accent-soft); }
+.btn:disabled { opacity: .5; pointer-events: none; }
+.actions { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+@media (min-width: 520px) { .actions.row { flex-direction: row; justify-content: center; } .actions.row .btn { width: auto; } }
+
+footer { text-align: center; color: var(--muted); font-size: .85rem; padding-block: 8px 36px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap"><a class="brand" href="index.html">Die Botha <span>Familie</span> Liedjies</a></div>
+</header>
+
+<main class="wrap">
+
+  <!-- Working -->
+  <section class="card" id="sSending" aria-live="polite">
+    <div class="spinner" role="status" aria-label="Laai tans"></div>
+    <h1 tabindex="-1">Net 'n oomblik</h1>
+    <p class="lead">Ons stuur jou bestelling aan die Bothas. Hou asseblief hierdie bladsy oop.</p>
+  </section>
+
+  <!-- Success -->
+  <section class="card" id="sDone" hidden>
+    <div class="icon ok" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path class="tick" d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </div>
+    <p class="eyebrow">Bestelling ontvang</p>
+    <h1 tabindex="-1" id="doneTitle">Dankie!</h1>
+    <p class="lead" id="doneLead">Ons het jou bestelling en jou storie. Die Botha-gesin neem dit van hier af oor.</p>
+
+    <div class="refbox"><span class="k">Jou bestelnommer</span><span class="v" id="doneRef">-</span></div>
+
+    <div class="facts" id="doneFacts" hidden></div>
+
+    <div class="next">
+      <h2>Wat nou gebeur</h2>
+      <ol>
+        <li><div><b>Ons kontroleer jou betaling</b><span>Ons pas dit by jou bestelnommer.</span></div></li>
+        <li><div><b>Ons lees jou storie</b><span>Elke bestelling word deur ons gelees en op bestelling gemaak.</span></div></li>
+        <li><div><b>Jou liedjie kom per e-pos</b><span>Binne <span class="days">3</span> dae nadat jou betaling verskyn, met een gratis verandering as iets nie reg is nie.</span></div></li>
+      </ol>
+    </div>
+
+    <p class="small">Hou asseblief jou bestelnommer. As jy ons moet bereik, noem dit.</p>
+    <div class="actions row">
+      <a class="btn primary" id="waDone" target="_blank" rel="noopener" href="#" hidden>Stuur vir ons 'n WhatsApp</a>
+      <a class="btn secondary" href="index.html">Bestel nog 'n liedjie</a>
+    </div>
+  </section>
+
+  <!-- Could not send -->
+  <section class="card" id="sError" hidden>
+    <div class="icon warn" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 16.5v.01"/><circle cx="12" cy="12" r="9"/></svg>
+    </div>
+    <h1 tabindex="-1">Ons kon nie jou bestelling stuur nie</h1>
+    <p class="lead">Jou betaling is nie geraak nie en jou antwoorde is op hierdie toestel gestoor. Probeer asseblief weer.</p>
+    <div class="refbox"><span class="k">Jou bestelnommer</span><span class="v" id="errRef">-</span></div>
+    <div class="err" id="errMsg" role="alert">Kontroleer jou internetverbinding en tik Probeer weer.</div>
+    <div class="actions">
+      <button type="button" class="btn primary" id="retryBtn">Probeer weer</button>
+      <button type="button" class="btn secondary" id="copyBtn">Kopieer my bestelbesonderhede</button>
+      <a class="btn secondary" id="waErr" target="_blank" rel="noopener" href="#" hidden>Stuur vir ons 'n WhatsApp</a>
+    </div>
+    <p class="small">As dit aanhou misluk, kopieer jou bestelbesonderhede en stuur dit met jou bestelnommer per WhatsApp aan ons.</p>
+  </section>
+
+  <!-- No order found on this device -->
+  <section class="card" id="sMissing" hidden>
+    <div class="icon warn" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></svg>
+    </div>
+    <h1 tabindex="-1">Ons kon nie jou bestelling hier vind nie</h1>
+    <p class="lead">As jy pas betaal het, is jou storie dalk op 'n ander foon of blaaier ingevul, of die bladsydata is uitgevee. Geen probleem nie, stuur vir ons 'n boodskap en ons sorg daarvoor.</p>
+    <div class="actions">
+      <a class="btn primary" id="waMissing" target="_blank" rel="noopener" href="#" hidden>Stuur vir ons 'n WhatsApp</a>
+      <a class="btn secondary" href="index.html">Gaan na die bestelvorm</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>Die Botha Familie Liedjies &middot; Met liefde met die hand gemaak</footer>
+
+<script>
+/* =========================================
+   KONFIGURASIE (dieselfde waardes as script.js)
+========================================= */
+const CONFIG = {
+  // Net syfers met landkode, bv. 27821234567 (geen +, geen voorste 0)
+  whatsapp: "27846384919",
+  formEndpoint: "https://formspree.io/f/mdegdrnr",
+  deliveryDays: 3
+};
+
+const PACKAGES = {
+  personal:   { name: "Aandenking",            price: 350 },
+  commercial: { name: "Aandenking + Besigheid", price: 850 },
+  exclusive:  { name: "Eksklusief",            price: 2500 }
+};
+
+const DRAFT_KEY = "botha-songs-draft-v2";   // geskryf deur script.js
+const DONE_KEY  = "botha-songs-last-order"; // onthou 'n voltooide bestelling
+
+/* =========================================
+   HELPERS
+========================================= */
+const $ = id => document.getElementById(id);
+const money = n => "R" + Number(n).toLocaleString("en-ZA");
+const STATES = ["sSending", "sDone", "sError", "sMissing"];
+
+function read(key) {
+  try { return JSON.parse(localStorage.getItem(key)); } catch (e) { return null; }
+}
+function write(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+}
+function remove(key) {
+  try { localStorage.removeItem(key); } catch (e) {}
+}
+
+function setState(id) {
+  STATES.forEach(s => { $(s).hidden = s !== id; });
+  const h = $(id).querySelector("h1");
+  if (h) h.focus({ preventScroll: true });
+  window.scrollTo({ top: 0 });
+}
+
+function waLink(text) {
+  const n = String(CONFIG.whatsapp || "").replace(/\D/g, "");
+  if (!n) return "";
+  return "https://wa.me/" + n + (text ? "?text=" + encodeURIComponent(text) : "");
+}
+function showWhatsApp(id, text) {
+  const url = waLink(text);
+  const a = $(id);
+  if (url) { a.href = url; a.hidden = false; }
+}
+
+document.querySelectorAll(".days").forEach(e => { e.textContent = CONFIG.deliveryDays; });
+
+/* =========================================
+   ORDER TEXT (for the copy button)
+========================================= */
+const LABELS = {
+  recipient_name: "Liedjie vir", name_pronunciation: "Naam word gesê", relationship: "Verwantskap", occasion: "Geleentheid",
+  need_by_date: "Benodig teen", age: "Ouderdom", personality: "Persoonlikheid", loves: "Hou van",
+  favourite_memory: "Herinnering", nicknames_jokes: "Troetelname / grappies", names_places: "Name / plekke",
+  message: "Boodskap", must_include: "Moet insluit", avoid: "Vermy", own_lyrics: "Eie lirieke",
+  style: "Styl", mood: "Atmosfeer", language: "Taal", other_language: "Ander taal", voice: "Stem",
+  tempo: "Tempo", similar_songs: "Soortgelyke liedjies",
+  customer_name: "Kliënt", customer_phone: "WhatsApp", customer_email: "E-pos",
+  contact_preference: "Kontak per", heard_about_us: "Hoe van ons gehoor"
+};
+
+function orderText(draft) {
+  const d = draft.data || {};
+  const pkg = PACKAGES[d.licence];
+  const lines = ["NUWE LIEDJIEBESTELLING", "Bestelnommer: " + draft.ref, ""];
+  Object.keys(LABELS).forEach(k => {
+    if (d[k] && String(d[k]).trim()) lines.push(LABELS[k] + ": " + String(d[k]).trim());
+  });
+  lines.push("", "Lisensie: " + (pkg ? pkg.name + " (" + money(pkg.price) + ")" : "Nie gekies nie"));
+  lines.push("Voorwaardes aanvaar: " + (d.terms_accepted ? "Ja" : "Nee"));
+  return lines.join("\n");
+}
+
+/* =========================================
+   SHOW THE RESULT
+========================================= */
+function showDone(info, alreadySent) {
+  $("doneRef").textContent = info.ref;
+
+  const facts = $("doneFacts");
+  facts.textContent = "";
+  [["Liedjie vir", info.name], ["Lisensie", info.licence ? info.licence + (info.price ? " (" + money(info.price) + ")" : "") : ""]]
+    .forEach(([k, v]) => {
+      if (!v) return;
+      const row = document.createElement("div");
+      const a = document.createElement("span"); a.className = "k"; a.textContent = k;
+      const b = document.createElement("span"); b.className = "v"; b.textContent = v;
+      row.append(a, b);
+      facts.appendChild(row);
+    });
+  facts.hidden = !facts.children.length;
+
+  if (info.name) $("doneTitle").textContent = "Dankie, ons het jou storie vir " + info.name;
+  if (alreadySent) $("doneLead").textContent = "Welkom terug. Jou bestelling het ons reeds bereik, so daar is niks meer om te doen nie.";
+
+  showWhatsApp("waDone", "Hallo, ek het pas 'n liedjie bestel. My bestelnommer is " + info.ref + ".");
+  setState("sDone");
+}
+
+function showError(draft, message) {
+  $("errRef").textContent = draft.ref;
+  if (message) $("errMsg").textContent = message;
+  showWhatsApp("waErr", "Hallo, my bestelling " + draft.ref + " wou nie op die webwerf stuur nie. Hier is my besonderhede:\n\n" + orderText(draft));
+  setState("sError");
+}
+
+/* =========================================
+   SEND THE ORDER
+========================================= */
+let sending = false;
+
+async function sendOrder(draft) {
+  if (sending) return;
+  sending = true;
+  $("retryBtn").disabled = true;
+  setState("sSending");
+
+  const d = draft.data || {};
+  const pkg = PACKAGES[d.licence];
+  if (!pkg || !CONFIG.formEndpoint) {
+    sending = false;
+    $("retryBtn").disabled = false;
+    showError(draft, "Iets ontbreek in jou bestelling, so ons kon dit nie outomaties stuur nie. Kopieer asseblief jou bestelbesonderhede en stuur dit per WhatsApp aan ons.");
+    return;
+  }
+
+  const fd = new FormData();
+  Object.keys(d).forEach(k => {
+    const v = d[k];
+    fd.append(k, typeof v === "boolean" ? (v ? "ja" : "nee") : v);
+  });
+  fd.append("order_number", draft.ref);
+  fd.append("licence_name", pkg.name);
+  fd.append("price_zar", pkg.price);
+  fd.append("customer_says_paid", "ja");
+  fd.append("sent_from", "bedankbladsy ná Yoco-betaling");
+  fd.append("_subject", "Nuwe liedjiebestelling " + draft.ref + " (" + pkg.name + " " + money(pkg.price) + ")");
+
+  try {
+    const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: fd, headers: { Accept: "application/json" } });
+    if (!res.ok) throw new Error("Status " + res.status);
+
+    const info = { ref: draft.ref, name: d.recipient_name || "", licence: pkg.name, price: pkg.price, at: Date.now() };
+    write(DONE_KEY, info);
+    remove(DRAFT_KEY);
+    sending = false;
+    showDone(info, false);
+  } catch (err) {
+    sending = false;
+    $("retryBtn").disabled = false;
+    showError(draft, "Kontroleer jou internetverbinding en tik Probeer weer.");
+  }
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+$("retryBtn").addEventListener("click", () => {
+  const draft = read(DRAFT_KEY);
+  if (draft && draft.data) sendOrder(draft);
+});
+
+$("copyBtn").addEventListener("click", async () => {
+  const draft = read(DRAFT_KEY);
+  const b = $("copyBtn");
+  if (!draft) return;
+  try { await navigator.clipboard.writeText(orderText(draft)); b.textContent = "Gekopieer"; }
+  catch (e) { b.textContent = "Kopieer het misluk"; }
+  setTimeout(() => { b.textContent = "Kopieer my bestelbesonderhede"; }, 2000);
+});
+
+/* =========================================
+   START
+========================================= */
+(function init() {
+  const draft = read(DRAFT_KEY);
+  const done = read(DONE_KEY);
+
+  // Order saved on this device and the customer went through the pay button
+  if (draft && draft.ref && draft.data && draft.payStarted) {
+    sendOrder(draft);
+    return;
+  }
+
+  // Order already sent earlier (page reloaded or revisited)
+  if (done && done.ref) {
+    showDone(done, true);
+    return;
+  }
+
+  // Nothing to send from this device
+  showWhatsApp("waMissing", "Hallo, ek het pas vir 'n liedjie betaal maar my bestelling het nie op die webwerf verskyn nie. My naam is: ");
+  setState("sMissing");
+})();
+</script>
+</body>
+</html>

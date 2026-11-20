@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en-ZA">
+<html lang="af-ZA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Botha Family Songs</title>
-<meta name="description" content="Personalised songs made to order for the people you love, by the Botha family.">
+<title>Botha-familieliedjies</title>
+<meta name="description" content="Persoonlike liedjies op bestelling gemaak vir die mense vir wie jy lief is, deur die Botha-familie.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,8 +15,8 @@
 <header class="top">
   <div class="wrap">
     <div class="bar">
-      <span class="brand">The Botha <span>Family</span> Songs</span>
-      <span class="secure">Payment by Yoco</span>
+      <span class="brand">Die Botha <span>Familie</span>liedjies</span>
+      <span class="secure">Betaling deur Yoco</span>
     </div>
   </div>
 </header>
@@ -24,166 +24,162 @@
 <main class="wrap" id="top">
 
   <div class="intro" id="intro">
-    <figure class="photo" id="photo" hidden><img id="photoImg" alt="The Botha family smiling together in their garden" width="1400" height="1120"></figure>
-    <p class="eyebrow">Personalised songs &middot; made to order</p>
-    <h1>A song with <em>their name</em> in it.</h1>
-    <p class="lede" id="heroLede">Answer a few questions about someone you love. We turn your answers into a song made just for them. It takes about 5 minutes.</p>
+    <figure class="photo" id="photo" hidden><img id="photoImg" alt="Die Botha-familie glimlag saam in hul tuin" width="1400" height="1120"></figure>
+    <p class="eyebrow">Persoonlike liedjies &middot; op bestelling gemaak</p>
+    <h1>'n Liedjie met <em>hul naam</em> in.</h1>
+    <p class="lede" id="heroLede">Beantwoord 'n paar vrae oor iemand vir wie jy lief is. Ons maak van jou antwoorde 'n liedjie net vir hulle. Dit neem ongeveer 5 minute.</p>
   </div>
 
   <div class="progress" id="progress" aria-live="polite">
-    <div class="meta"><span>Step <b id="pNum">1</b> of <b id="pTotal">8</b></span><span id="pLabel"></span></div>
+    <div class="meta"><span>Stap <b id="pNum">1</b> van <b id="pTotal">8</b></span><span id="pLabel"></span></div>
     <div class="track" role="progressbar" aria-valuemin="1" aria-valuemax="8" aria-valuenow="1" id="track"><div class="fill" id="fill"></div></div>
   </div>
 
   <form id="orderForm" class="card" novalidate autocomplete="on">
-    <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+    <div class="hp" aria-hidden="true"><label>Los dit leeg <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
 
     <!-- 1 -->
-    <section class="step" data-label="Who it's for" hidden>
-      <h2 tabindex="-1">Who is the song for?</h2>
+    <section class="step" data-label="Vir wie" hidden>
+      <h2 tabindex="-1">Vir wie is die liedjie?</h2>
       <div class="row">
-        <div class="field"><label for="rname">Their name</label><input id="rname" name="recipient_name" type="text" placeholder="Thandi" data-req data-label="Their name"></div>
-        <div class="field"><label for="pron">How is it said? <span class="opt">(optional)</span></label><input id="pron" name="name_pronunciation" type="text" placeholder="e.g. TAHN-dee"></div>
+        <div class="field"><label for="rname">Hul naam</label><input id="rname" name="recipient_name" type="text" placeholder="Thandi" data-req data-label="Hul naam"></div>
+        <div class="field"><label for="pron">Hoe word dit gesê? <span class="opt">(opsioneel)</span></label><input id="pron" name="name_pronunciation" type="text" placeholder="bv. TAHN-dee"></div>
       </div>
       <div class="row">
-        <div class="field"><label for="rel">Who are they to you?</label>
-          <select id="rel" name="relationship"><option>Mom</option><option>Dad</option><option>Wife or husband</option><option>Girlfriend or boyfriend</option><option>Child</option><option>Grandparent</option><option>Sibling</option><option>Friend</option><option>Someone else</option></select></div>
-        <div class="field"><label for="occasion">Occasion</label>
-          <select id="occasion" name="occasion"><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Mother's or Father's Day</option><option>Valentine's Day</option><option>Just because</option><option>Memorial or tribute</option><option>Something else</option></select></div>
+        <div class="field"><label for="rel">Wie is hulle vir jou?</label>
+          <select id="rel" name="relationship"><option>Ma</option><option>Pa</option><option>Eggenoot of eggenote</option><option>Kêrel of nooi</option><option>Kind</option><option>Grootouer</option><option>Broer of suster</option><option>Vriend of vriendin</option><option>Iemand anders</option></select></div>
+        <div class="field"><label for="occasion">Geleentheid</label>
+          <select id="occasion" name="occasion"><option>Verjaarsdag</option><option>Troue</option><option>Herdenking</option><option>Moedersdag of Vadersdag</option><option>Valentynsdag</option><option>Net so</option><option>Gedenkdiens of huldeblyk</option><option>Iets anders</option></select></div>
       </div>
-      <div class="field"><label for="needby">Date you need it by <span class="opt">(optional)</span><span class="hint">We aim to deliver within <span class="days">3</span> days of payment. Tell us if you have a deadline.</span></label><input id="needby" name="need_by_date" type="date"></div>
+      <div class="field"><label for="needby">Datum waarteen jy dit nodig het <span class="opt">(opsioneel)</span><span class="hint">Ons mik om binne <span class="days">3</span> dae ná betaling te lewer. Sê vir ons as jy 'n sperdatum het.</span></label><input id="needby" name="need_by_date" type="date"></div>
     </section>
 
     <!-- 2 -->
-    <section class="step" data-label="About them" hidden>
-      <h2 tabindex="-1">Tell us about them</h2>
-      <p class="sub">The more we know, the more it sounds like them.</p>
-      <div class="field"><label for="age">Age or age they are turning <span class="opt">(optional)</span></label><input id="age" name="age" type="text" inputmode="numeric"></div>
-      <div class="field"><label for="personality">What are they like?<span class="hint">Describe their personality. Funny, gentle, stubborn, the life of the party?</span></label><textarea id="personality" name="personality" data-req data-label="What they are like"></textarea></div>
-      <div class="field"><label for="loves">What do they love?<span class="hint">Hobbies, food, music, sport, work, pets, anything that lights them up.</span></label><textarea id="loves" name="loves" data-req data-label="What they love"></textarea></div>
+    <section class="step" data-label="Oor hulle" hidden>
+      <h2 tabindex="-1">Vertel ons van hulle</h2>
+      <p class="sub">Hoe meer ons weet, hoe meer klink dit soos hulle.</p>
+      <div class="field"><label for="age">Ouderdom of die ouderdom wat hulle word <span class="opt">(opsioneel)</span></label><input id="age" name="age" type="text" inputmode="numeric"></div>
+      <div class="field"><label for="personality">Hoe is hulle?<span class="hint">Beskryf hul persoonlikheid. Snaaks, sag, hardkoppig, die lewe van die partytjie?</span></label><textarea id="personality" name="personality" data-req data-label="Hoe hulle is"></textarea></div>
+      <div class="field"><label for="loves">Waarvan hou hulle?<span class="hint">Stokperdjies, kos, musiek, sport, werk, troeteldiere, enigiets wat hulle laat opklaar.</span></label><textarea id="loves" name="loves" data-req data-label="Waarvan hulle hou"></textarea></div>
     </section>
 
     <!-- 3 -->
-    <section class="step" data-label="Memories" hidden>
-      <h2 tabindex="-1">Your favourite memories</h2>
-      <p class="sub">Real moments make the best lyrics.</p>
-      <div class="field"><label for="memory">A memory you share<span class="hint">Tell us a story that is special to the two of you. A few sentences is plenty.</span></label><textarea id="memory" name="favourite_memory" data-req data-min="15" data-label="A memory you share (at least 15 characters)"></textarea></div>
-      <div class="field"><label for="jokes">Nicknames, inside jokes, things they always say <span class="opt">(optional)</span></label><textarea id="jokes" name="nicknames_jokes"></textarea></div>
-      <div class="field"><label for="places">Names and places to include <span class="opt">(optional)</span><span class="hint">Family members, pets, your town, a favourite spot.</span></label><textarea id="places" name="names_places"></textarea></div>
+    <section class="step" data-label="Herinneringe" hidden>
+      <h2 tabindex="-1">Jou gunsteling-herinneringe</h2>
+      <p class="sub">Egte oomblikke maak die beste lirieke.</p>
+      <div class="field"><label for="memory">'n Herinnering wat julle deel<span class="hint">Vertel ons 'n storie wat vir julle twee spesiaal is. 'n Paar sinne is genoeg.</span></label><textarea id="memory" name="favourite_memory" data-req data-min="15" data-label="'n Herinnering wat julle deel (minstens 15 karakters)"></textarea></div>
+      <div class="field"><label for="jokes">Troetelname, binnegrappies, goed wat hulle altyd sê <span class="opt">(opsioneel)</span></label><textarea id="jokes" name="nicknames_jokes"></textarea></div>
+      <div class="field"><label for="places">Name en plekke om in te sluit <span class="opt">(opsioneel)</span><span class="hint">Familielede, troeteldiere, jou dorp, 'n gunstelingplek.</span></label><textarea id="places" name="names_places"></textarea></div>
     </section>
 
     <!-- 4 -->
-    <section class="step" data-label="Your message" hidden>
-      <h2 tabindex="-1">What should the song say?</h2>
-      <div class="field"><label for="message">Your message to them<span class="hint">If you could say one thing to them in a song, what would it be?</span></label><textarea id="message" name="message" data-req data-min="15" data-label="Your message to them (at least 15 characters)"></textarea></div>
-      <div class="field"><label for="include">Words or lines that must be in the song <span class="opt">(optional)</span></label><textarea id="include" name="must_include" style="min-height:90px"></textarea></div>
-      <div class="field"><label for="avoid">Anything we should avoid <span class="opt">(optional)</span><span class="hint">Sensitive topics, names, words you do not want.</span></label><textarea id="avoid" name="avoid" style="min-height:90px"></textarea></div>
-      <div class="field"><label for="own">Your own lyrics <span class="opt">(optional)</span><span class="hint">Already wrote something? Paste it and we will build the song around it.</span></label><textarea id="own" name="own_lyrics"></textarea></div>
+    <section class="step" data-label="Jou boodskap" hidden>
+      <h2 tabindex="-1">Wat moet die liedjie sê?</h2>
+      <div class="field"><label for="message">Jou boodskap aan hulle<span class="hint">As jy net een ding vir hulle in 'n liedjie kon sê, wat sou dit wees?</span></label><textarea id="message" name="message" data-req data-min="15" data-label="Jou boodskap aan hulle (minstens 15 karakters)"></textarea></div>
+      <div class="field"><label for="include">Woorde of reëls wat in die liedjie moet wees <span class="opt">(opsioneel)</span></label><textarea id="include" name="must_include" style="min-height:90px"></textarea></div>
+      <div class="field"><label for="avoid">Enigiets wat ons moet vermy <span class="opt">(opsioneel)</span><span class="hint">Sensitiewe onderwerpe, name, woorde wat jy nie wil hê nie.</span></label><textarea id="avoid" name="avoid" style="min-height:90px"></textarea></div>
+      <div class="field"><label for="own">Jou eie lirieke <span class="opt">(opsioneel)</span><span class="hint">Reeds iets geskryf? Plak dit hier en ons bou die liedjie daarom.</span></label><textarea id="own" name="own_lyrics"></textarea></div>
     </section>
 
     <!-- 5 -->
-    <section class="step" data-label="The sound" hidden>
-      <h2 tabindex="-1">How should it sound?</h2>
+    <section class="step" data-label="Die klank" hidden>
+      <h2 tabindex="-1">Hoe moet dit klink?</h2>
       <div class="row">
-        <div class="field"><label for="genre">Style</label>
-          <select id="genre" name="style"><option>Pop</option><option>Amapiano</option><option>Afro-house</option><option>Gospel</option><option>Hip-hop</option><option>R&amp;B</option><option>Acoustic / folk</option><option>Country</option><option>Jazz</option><option>Not sure, you choose</option></select></div>
-        <div class="field"><label for="mood">Mood</label>
-          <select id="mood" name="mood"><option>Heartfelt and emotional</option><option>Happy and upbeat</option><option>Romantic</option><option>Funny</option><option>Chilled</option><option>Energetic</option></select></div>
+        <div class="field"><label for="genre">Styl</label>
+          <select id="genre" name="style"><option>Pop</option><option>Amapiano</option><option>Afro-house</option><option>Gospel</option><option>Hip-hop</option><option>R&amp;B</option><option>Akoesties / folk</option><option>Country</option><option>Jazz</option><option>Ek is nie seker nie, kies jy</option></select></div>
+        <div class="field"><label for="mood">Atmosfeer</label>
+          <select id="mood" name="mood"><option>Hartlik en emosioneel</option><option>Bly en lewendig</option><option>Romanties</option><option>Snaaks</option><option>Rustig</option><option>Energiek</option></select></div>
       </div>
       <div class="row">
-        <div class="field"><label for="lang">Language</label>
-          <select id="lang" name="language"><option>English</option><option>Afrikaans</option><option>isiZulu</option><option>isiXhosa</option><option>Sesotho</option><option>Setswana</option><option>Other (say which below)</option></select></div>
-        <div class="field"><label for="vocal">Voice</label>
-          <select id="vocal" name="voice"><option>Female voice</option><option>Male voice</option><option>Instrumental only</option><option>No preference</option></select></div>
+        <div class="field"><label for="lang">Taal</label>
+          <select id="lang" name="language"><option>Engels</option><option>Afrikaans</option><option>isiZulu</option><option>isiXhosa</option><option>Sesotho</option><option>Setswana</option><option>Ander (sê hieronder watter)</option></select></div>
+        <div class="field"><label for="vocal">Stem</label>
+          <select id="vocal" name="voice"><option>Vroulike stem</option><option>Manlike stem</option><option>Net instrumentaal</option><option>Geen voorkeur</option></select></div>
       </div>
       <div class="row">
-        <div class="field"><label for="tempo">Pace</label>
-          <select id="tempo" name="tempo"><option>No preference</option><option>Slow</option><option>Medium</option><option>Fast</option></select></div>
-        <div class="field"><label for="otherlang">Other language <span class="opt">(if chosen above)</span></label><input id="otherlang" name="other_language" type="text"></div>
+        <div class="field"><label for="tempo">Tempo</label>
+          <select id="tempo" name="tempo"><option>Geen voorkeur</option><option>Stadig</option><option>Matig</option><option>Vinnig</option></select></div>
+        <div class="field"><label for="otherlang">Ander taal <span class="opt">(as hierbo gekies)</span></label><input id="otherlang" name="other_language" type="text"></div>
       </div>
-      <div class="field"><label for="ref">Songs with a similar feel <span class="opt">(optional, for style only)</span></label><input id="ref" name="similar_songs" type="text"></div>
+      <div class="field"><label for="ref">Liedjies met 'n soortgelyke gevoel <span class="opt">(opsioneel, net vir styl)</span></label><input id="ref" name="similar_songs" type="text"></div>
     </section>
 
     <!-- 6 -->
-    <section class="step" data-label="Your details" hidden>
-      <h2 tabindex="-1">Your details</h2>
-      <p class="sub">So we can send your song and reach you if we have a question.</p>
+    <section class="step" data-label="Jou besonderhede" hidden>
+      <h2 tabindex="-1">Jou besonderhede</h2>
+      <p class="sub">Sodat ons jou liedjie kan stuur en jou kan bereik as ons 'n vraag het.</p>
       <div class="row">
-        <div class="field"><label for="name">Your name</label><input id="name" name="customer_name" type="text" autocomplete="name" data-req data-label="Your name"></div>
-        <div class="field"><label for="phone">WhatsApp number</label><input id="phone" name="customer_phone" type="tel" autocomplete="tel" placeholder="082 123 4567" data-req data-phone data-label="A valid WhatsApp number"></div>
+        <div class="field"><label for="name">Jou naam</label><input id="name" name="customer_name" type="text" autocomplete="name" data-req data-label="Jou naam"></div>
+        <div class="field"><label for="phone">WhatsApp-nommer</label><input id="phone" name="customer_phone" type="tel" autocomplete="tel" placeholder="082 123 4567" data-req data-phone data-label="'n Geldige WhatsApp-nommer"></div>
       </div>
-      <div class="field"><label for="email">Email<span class="hint">Your finished song is sent here.</span></label><input id="email" name="customer_email" type="email" autocomplete="email" data-req data-email data-label="A valid email address"></div>
+      <div class="field"><label for="email">E-pos<span class="hint">Jou voltooide liedjie word hierheen gestuur.</span></label><input id="email" name="customer_email" type="email" autocomplete="email" data-req data-email data-label="'n Geldige e-posadres"></div>
       <div class="row">
-        <div class="field"><label for="contact">Best way to reach you</label>
-          <select id="contact" name="contact_preference"><option>WhatsApp</option><option>Email</option></select></div>
-        <div class="field"><label for="heard">How did you hear about us? <span class="opt">(optional)</span></label>
-          <select id="heard" name="heard_about_us"><option value="">Choose one</option><option>Friend or family</option><option>Facebook</option><option>Instagram</option><option>TikTok</option><option>WhatsApp</option><option>Other</option></select></div>
+        <div class="field"><label for="contact">Beste manier om jou te bereik</label>
+          <select id="contact" name="contact_preference"><option>WhatsApp</option><option>E-pos</option></select></div>
+        <div class="field"><label for="heard">Hoe het jy van ons gehoor? <span class="opt">(opsioneel)</span></label>
+          <select id="heard" name="heard_about_us"><option value="">Kies een</option><option>Vriend of familie</option><option>Facebook</option><option>Instagram</option><option>TikTok</option><option>WhatsApp</option><option>Ander</option></select></div>
       </div>
     </section>
 
     <!-- 7 -->
-    <section class="step" data-label="Licence" hidden>
-      <h2 tabindex="-1">Choose your licence</h2>
-      <p class="sub">This decides how you may use the finished song.</p>
-      <div class="pkgs" id="pkgs" role="radiogroup" aria-label="Licence package"></div>
-      <details><summary>Rights and copyright terms</summary><ol id="terms"></ol></details>
-      <label class="check"><input type="checkbox" id="agree" name="terms_accepted" value="yes"><span>I have read and accept the rights and copyright terms above.</span></label>
+    <section class="step" data-label="Lisensie" hidden>
+      <h2 tabindex="-1">Kies jou lisensie</h2>
+      <p class="sub">Dit bepaal hoe jy die voltooide liedjie mag gebruik.</p>
+      <div class="pkgs" id="pkgs" role="radiogroup" aria-label="Lisensiepakket"></div>
+      <details><summary>Regte- en kopieregvoorwaardes</summary><ol id="terms"></ol></details>
+      <label class="check"><input type="checkbox" id="agree" name="terms_accepted" value="yes"><span>Ek het die regte- en kopieregvoorwaardes hierbo gelees en aanvaar.</span></label>
     </section>
 
     <!-- 8 -->
-    <section class="step" data-label="Review and pay" hidden>
-      <h2 tabindex="-1">Check it, then pay</h2>
-      <p class="sub">Order number: <b id="refLine"></b></p>
+    <section class="step" data-label="Hersien en betaal" hidden>
+      <h2 tabindex="-1">Gaan dit na, betaal dan</h2>
+      <p class="sub">Bestelnommer: <b id="refLine"></b></p>
       <div class="review" id="review"></div>
-      <div class="sum"><span id="sumPkg">No licence chosen</span><b id="sumPrice">R0</b></div>
+      <div class="sum"><span id="sumPkg">Geen lisensie gekies nie</span><b id="sumPrice">R0</b></div>
 
       <div class="stepbox">
-        <p><span class="n">1.</span> Pay on Yoco's secure page. It opens in a new tab.</p>
-        <a class="btn primary" id="payBtn" target="_blank" rel="noopener" href="#">Pay securely with Yoco</a>
-        <p class="small">If Yoco asks for a reference, use your order number.</p>
+        <p><span class="n">1.</span> Betaal op Yoco se veilige bladsy. Dit maak in 'n nuwe oortjie oop.</p>
+        <a class="btn primary" id="payBtn" target="_blank" rel="noopener" href="#">Betaal veilig met Yoco</a>
+        <p class="small">As Yoco vir 'n verwysing vra, gebruik jou bestelnommer.</p>
       </div>
 
       <div class="stepbox" id="afterPay" hidden>
-        <p><span class="n">2.</span> Finished paying? Send your order to us. We only receive your answers after this step.</p>
-        <button type="button" class="btn primary" id="sendBtn">I have paid. Send my order</button>
-      </div>
-
-      <div class="actions">
-        <button type="button" class="btn secondary" id="copyBtn">Copy order details</button>
+        <p><span class="n">2.</span> Klaar betaal? Stuur jou bestelling aan ons. Ons ontvang eers jou antwoorde ná hierdie stap.</p>
+        <button type="button" class="btn primary" id="sendBtn">Ek het betaal. Stuur my bestelling</button>
       </div>
     </section>
 
     <div class="err" id="err" role="alert" hidden></div>
 
     <div class="nav" id="nav">
-      <button type="button" class="btn secondary" id="backBtn">Back</button>
-      <button type="button" class="btn primary" id="nextBtn">Next</button>
+      <button type="button" class="btn secondary" id="backBtn">Terug</button>
+      <button type="button" class="btn primary" id="nextBtn">Volgende</button>
     </div>
   </form>
 
-  <!-- thank you -->
+  <!-- dankie -->
   <div class="card thanks" id="thanks" hidden>
-    <p class="eyebrow">Order received</p>
-    <h2 tabindex="-1" id="thanksH">Thank you, we have your story</h2>
-    <p>Your order number is</p>
+    <p class="eyebrow">Bestelling ontvang</p>
+    <h2 tabindex="-1" id="thanksH">Dankie, ons het jou storie</h2>
+    <p>Jou bestelnommer is</p>
     <p class="ref" id="thanksRef"></p>
-    <p class="small">We will check your payment and start your song. You will get it by email within <span class="days">3</span> days of your payment showing. Keep your order number in case you need to contact us.</p>
-    <a class="btn secondary" id="waBtn" target="_blank" rel="noopener" href="#" hidden>Message us on WhatsApp</a>
+    <p class="small">Ons sal jou betaling nagaan en met jou liedjie begin. Jy kry dit per e-pos binne <span class="days">3</span> dae nadat jou betaling verskyn. Hou jou bestelnommer vir ingeval jy ons moet bereik.</p>
+    <a class="btn secondary" id="waBtn" target="_blank" rel="noopener" href="#" hidden>Stuur vir ons 'n WhatsApp</a>
   </div>
 
-  <section class="faq" aria-label="Questions">
-    <p class="eyebrow">Good to know</p>
-    <details><summary>How is my song made?</summary><p>Each song is made to order from your story. We create it using AI music tools and guide and check the result ourselves before it reaches you. Our terms explain what rights you receive.</p></details>
-    <details><summary>How long does it take?</summary><p>We aim to deliver within <span class="days">3</span> days of your payment showing.</p></details>
-    <details><summary>What if I want something changed?</summary><p>You get one free change to the lyrics or style. Just reply on WhatsApp.</p></details>
-    <details><summary>Can I use it on social media or in my business?</summary><p>Keepsake is for personal use. If you want to use a song in your business, ads or monetised content, choose Keepsake + Business or Exclusive.</p></details>
-    <details><summary>Can I get a refund?</summary><p>Each song is made specially for you, so we do not refund finished work. If we cannot deliver, you get a full refund.</p></details>
+  <section class="faq" aria-label="Vrae">
+    <p class="eyebrow">Goed om te weet</p>
+    <details><summary>Hoe word my liedjie gemaak?</summary><p>Elke liedjie word op bestelling uit jou storie gemaak. Ons skep dit met KI-musiekgereedskap en lei en kontroleer die resultaat self voordat dit jou bereik. Ons voorwaardes verduidelik watter regte jy ontvang.</p></details>
+    <details><summary>Hoe lank neem dit?</summary><p>Ons mik om binne <span class="days">3</span> dae nadat jou betaling verskyn te lewer.</p></details>
+    <details><summary>Wat as ek iets verander wil hê?</summary><p>Jy kry een gratis verandering aan die lirieke of styl. Antwoord net op WhatsApp.</p></details>
+    <details><summary>Kan ek dit op sosiale media of in my besigheid gebruik?</summary><p>Aandenking is vir persoonlike gebruik. As jy 'n liedjie in jou besigheid, advertensies of gemonetiseerde inhoud wil gebruik, kies Aandenking + Besigheid of Eksklusief.</p></details>
+    <details><summary>Kan ek 'n terugbetaling kry?</summary><p>Elke liedjie word spesiaal vir jou gemaak, daarom betaal ons nie voltooide werk terug nie. As ons nie kan lewer nie, kry jy 'n volle terugbetaling.</p></details>
   </section>
 </main>
 
 <footer><div class="wrap">
-  <p><b>The Botha Family Songs</b></p>
-  <p>Hand crafted with love</p>
+  <p><b>Die Botha Familie Liedjies</b></p>
+  <p>Met liefde met die hand gemaak</p>
 </div></footer>
 <script src="script.js"></script>
 </body>
